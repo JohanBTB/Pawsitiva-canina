@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perros', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('correo');
+            $table->integer('edad');
+            $table->string('distrito');
+            $table->string('numero_telefonico');
+            $table->string('contraseña');
+            $table->string('foto');
             $table->timestamps();
         });
     }

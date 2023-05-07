@@ -4,7 +4,12 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-
+    
+    'database' => env('DB_DATABASE'),
+    'dbhost' => env('DB_HOST'),
+    'dbuser' => env('DB_USERNAME'),
+    'dbpassword' => env('DB_PASSWORD'),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -184,5 +189,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+
+
 
 ];

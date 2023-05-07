@@ -7,6 +7,8 @@ use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\DonarController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\SobreNosotrosController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\IniciarSesionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +25,15 @@ Route::get('/', function () {
 });
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/buscar', [BuscarController::class, 'index']);
+// Route::get('/buscar/{}{id}', [BuscarController::class, 'mostrarAlbergue']);
+// Route::get('/buscar/perritos/{id}', [BuscarController::class, 'mostrarPerrito']);
 Route::get('/contactanos', [ContactanosController::class, 'index']);
 Route::get('/donar', [DonarController::class, 'index']);
 Route::get('/registrar', [RegistrarController::class, 'index']);
+Route::get('/iniciar-sesion', [IniciarSesionController::class, 'index']);
+
+
+
+
+
 Route::get('/sobre-nosotros', [SobreNosotrosController::class, 'index']);

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class SobreNosotrosController extends Controller
 {
     public function index(){
-        return view('sobre-nosotros.sobre-nosotros');    
+        $valor = "sobre-nosotros";
+        return view('sobre-nosotros.sobre-nosotros')->with('valor', $valor);    
     }
 }
 

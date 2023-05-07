@@ -1,0 +1,139 @@
+$perritos = [
+    [
+        'id' => 1,
+        'nombre' => 'Max',
+        'edad' => 2,
+        'distrito' => 'Miraflores',
+        'raza' => 'Labrador Retriever',
+        'historial_clinico' => 'Vacunas al día, sin enfermedades previas.',
+        'adoptado_por' => null,
+        'albergue_id' => 1,
+        'foto' => 'perritos/1.jpg',
+    ],
+    [
+        'id' => 2,
+        'nombre' => 'Luna',
+        'edad' => 1,
+        'distrito' => 'San Isidro',
+        'raza' => 'Golden Retriever',
+        'historial_clinico' => 'Recién vacunada, sin enfermedades previas.',
+        'adoptado_por' => null,
+        'albergue_id' => 2,
+        'foto' => 'perritos/2.jpg',
+    ],
+    [
+        'id' => 3,
+        'nombre' => 'Rocky',
+        'edad' => 3,
+        'distrito' => 'Barranco',
+        'raza' => 'Bulldog Francés',
+        'historial_clinico' => 'Tiene alergias leves, pero se encuentra en tratamiento.',
+        'adoptado_por' => null,
+        'albergue_id' => 3,
+        'foto' => 'perritos/3.jpg',
+    ],
+    [
+        'id' => 4,
+        'nombre' => 'Toby',
+        'edad' => 2,
+        'distrito' => 'San Miguel',
+        'raza' => 'Chihuahua',
+        'historial_clinico' => 'Desparasitado, vacunas al día.',
+        'adoptado_por' => 4,
+        'albergue_id' => 2,
+        'foto' => 'perritos/4.jpg',
+    ],
+    [
+        'id' => 5,
+        'nombre' => 'Coco',
+        'edad' => 4,
+        'distrito' => 'La Molina',
+        'raza' => 'Schnauzer',
+        'historial_clinico' => 'Operado de una fractura en la pata trasera, recuperado.',
+        'adoptado_por' => 1,
+        'albergue_id' => 1,
+        'foto' => 'perritos/5.jpg',
+    ],
+];
+
+$albergues = array(
+    array(
+        "id" => 1,
+        "nombre" => "Albergue Amor y Rescate",
+        "direccion"=> "Calle de las Pizzas - Av. Larco, Miraflores, Lima",
+        "numero"=>"456215875",
+        "codigo_qr" => "albergues/qr-facebook2.png",
+        "foto" => "albergues/1.jpg",
+        "correo" => "amoryrescate@hotmail.com",
+        "contrasena" => "contrasena1"
+    ),
+    array(
+        "id" => 2,
+        "nombre" => "Albergue Talpatitas",
+        "direccion"=> "Jirón de la Unión, Cercado de Lima, Lima",
+        "numero"=>"977456895",
+        "codigo_qr" => "albergues/qr-facebook2.png",
+        "foto" => "albergues/2.jpg",
+        "correo" => "talpatitas@hotmail.com",
+        "contrasena" => "contrasena2"
+    ),
+    array(
+        "id" => 3,
+        "nombre" => "Albergue Huellitas a casa",
+        "direccion"=> "Avenida La Mar, San Miguel, Lima",
+        "numero"=>"876105982",
+        "codigo_qr" => "albergues/qr-facebook2.png",
+        "foto" => "albergues/3.jpg",
+        "correo" => "HuellitasACasa@outlook.com",
+        "contrasena" => "contrasena3"
+    )
+);
+
+
+        
+$usuarios = array(
+    array(
+        "id"=> 1,
+        "nombre"=> "Ana Pérez",
+        "correo"=> "anaperez@gmail.com",
+        "edad"=> 32,
+        "distrito"=> "Miraflores",
+        "numero"=> "987654321",
+        "contraseña"=> "p@ssw0rd",
+        "foto"=> "usuarios/1.jpg",
+        "adoptados"=> 2
+    ),
+    array(
+        "id"=> 2,
+        "nombre"=> "Pedro Fernández",
+        "correo"=> "pfernandez@hotmail.com",
+        "edad"=> 26,
+        "distrito"=> "San Borja",
+        "numero"=> "986532174",
+        "contraseña"=> "123456",
+        "foto"=> "usuarios/2.jpg",
+        "adoptados"=> 2
+    ),
+    array(
+        "id"=> 3,
+        "nombre"=> "María Gómez",
+        "correo"=> "mariagomez@yahoo.com",
+        "edad"=> 40,
+        "distrito"=> "San Isidro",
+        "numero"=> "955482362",
+        "contraseña"=> "contraseña123",
+        "foto"=> "usuarios/3.jpg",
+        "adoptados"=> 0
+    ),
+    array(
+        "id"=> 4,
+        "nombre"=> "Juan López",
+        "correo"=> "juanlopez@gmail.com",
+        "edad"=> 22,
+        "distrito"=> "Surco",
+        "numero"=> "968512374",
+        "contraseña"=> "abcd1234",
+        "foto"=> "usuarios/4.jpg",
+        "adoptados"=> 1
+    )
+    );
