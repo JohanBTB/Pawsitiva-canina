@@ -8,11 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Albergue extends Model
+class Albergue extends Authenticatable
 {
     use HasApiTokens, HasFactory;
 
     protected $primaryKey = 'id';
+    protected $guard = "albergue";
     /**
      * The attributes that are mass assignable.
      *

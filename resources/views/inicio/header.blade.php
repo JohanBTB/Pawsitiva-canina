@@ -19,7 +19,7 @@
                         <li class="mx-6 mt-4 inline-flex border-2 px-4 py-2 border-celeste-650 rounded-full transition duration-500 hover:cursor-pointer hover:bg-celeste-650 hover:text-gris-50 "><a href="/donar">Donar</a></li>
                         <li class="mx-6 mt-4 inline-flex border-2 px-4 py-2 border-celeste-650 rounded-full transition duration-500 hover:cursor-pointer hover:bg-celeste-650 hover:text-gris-50 "><a href="/contactanos">Contactanos</a></li>
                         <li class="mx-6 mt-4 inline-flex border-2 px-4 py-2  border-celeste-650 rounded-full transition duration-500 hover:cursor-pointer hover:bg-celeste-650 hover:text-gris-50 "><a href="/sobre-nosotros">Sobre nosotros </a></li>
-                            
+                           
                     </ul>
 
                 </div>

@@ -12,10 +12,14 @@
                 @php
                     $datos = $datos->toArray();
                 @endphp
-                @foreach($datos as $dato) 
-                    @include('buscar.card', ['dato' =>$dato, 'tabla'=>$tabla])
-                @endforeach
+                @if($datos)
 
+                    @foreach($datos as $dato) 
+                        @include('buscar.card', ['dato' =>$dato, 'tabla'=>$tabla])
+                    @endforeach
+                @else
+                    <p>No se han encontrado datos.</p>
+                @endif
 
                 </div>
             </div>               

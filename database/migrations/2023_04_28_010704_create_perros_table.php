@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('perros', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('correo');
             $table->integer('edad');
             $table->string('distrito');
             $table->string('numero_telefonico');
-            $table->string('contraseña');
+            $table->integer('raza');
+            $table->text('historial_clinico')->nullable();
+            $table->unsignedBigInteger('adoptado_por')->nullable();
+            $table->unsignedBigInteger('albergue_id')->nullable();
+            $table->foreign('adoptado_por')->references('id')->on('usuarios')->onDelete('set null');
+            $table->foreign('albergue_id')->references('id')->on('albergues')->onDelete('set null');
             $table->string('foto');
             $table->timestamps();
         });

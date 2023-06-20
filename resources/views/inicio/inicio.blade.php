@@ -10,6 +10,12 @@
     @include('inicio.header')
 @endsection
 
+@php
+                         if(isset($error)){
+                            echo "ERROR TERRIBLE";
+                         }
+@endphp
+
 @section('content2')
     @include('inicio.content')
 @endsection

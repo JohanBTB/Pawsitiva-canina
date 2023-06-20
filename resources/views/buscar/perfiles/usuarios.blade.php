@@ -1,64 +1,3 @@
-
-<?php
-        $usuarios = array(
-            array(
-                "id"=> 1,
-                "nombre"=> "Ana Pérez",
-                "correo"=> "anaperez@gmail.com",
-                "edad"=> 32,
-                "distrito"=> "Miraflores",
-                "numero"=> "987654321",
-                "contraseña"=> "p@ssw0rd",
-                "foto"=> "usuarios/1.jpg",
-                "adoptados"=> 2
-            ),
-            array(
-                "id"=> 2,
-                "nombre"=> "Pedro Fernández",
-                "correo"=> "pfernandez@hotmail.com",
-                "edad"=> 26,
-                "distrito"=> "San Borja",
-                "numero"=> "986532174",
-                "contraseña"=> "123456",
-                "foto"=> "usuarios/2.jpg",
-                "adoptados"=> 2
-            ),
-            array(
-                "id"=> 3,
-                "nombre"=> "María Gómez",
-                "correo"=> "mariagomez@yahoo.com",
-                "edad"=> 40,
-                "distrito"=> "San Isidro",
-                "numero"=> "955482362",
-                "contraseña"=> "contraseña123",
-                "foto"=> "usuarios/3.jpg",
-                "adoptados"=> 0
-            ),
-            array(
-                "id"=> 4,
-                "nombre"=> "Juan López",
-                "correo"=> "juanlopez@gmail.com",
-                "edad"=> 22,
-                "distrito"=> "Surco",
-                "numero"=> "968512374",
-                "contraseña"=> "abcd1234",
-                "foto"=> "usuarios/4.jpg",
-                "adoptados"=> 1
-            )
-            );
-        
-
-
-$usuario = collect($usuarios)->firstWhere('id', $id);
-
-
-
-?>
-
-
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-
 <main class="profile-page px-6 mt-96  md:mt-40 xl:mt-12 lg:px-8">
   <section class="relative block h-500-px">
     <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
@@ -79,7 +18,7 @@ $usuario = collect($usuarios)->firstWhere('id', $id);
           <div class="flex flex-wrap justify-center">
             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
               <div class="relative">
-                <img alt="{{$usuario['nombre']}}" src="images/buscar/{{$usuario['foto']}}" class="shadow-xl rounded-full align-middle border-none -mt-[50%] w-48 h-48 mb-3 rounded-full shadow-lg">
+                <img alt="{{$datos['nombre']}}" src="{{$datos['foto']}}" class="shadow-xl rounded-full align-middle border-none -mt-[50%] w-48 h-48 mb-3 rounded-full shadow-lg">
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
@@ -95,40 +34,29 @@ $usuario = collect($usuarios)->firstWhere('id', $id);
                   <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">22</span><span class="text-sm text-gris-400">Amigos</span>
                 </div>
                 <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">10</span><span class="text-sm text-gris-400">Perritos adoptados</span>
+                  <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">{{$datos['cant_perros']}}</span><span class="text-sm text-gris-400">Perritos adoptados</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="text-center mt-12">
             <h3 class="text-4xl font-semibold leading-normal mb-2 text-marron-700 mb-2">
-              {{ $usuario['nombre'] }}
+              {{ $datos['nombre'] }}
             </h3>
             <div class="text-sm leading-normal mt-0 mb-2 text-gris-400 font-bold uppercase">
               <i class="fas fa-map-marker-alt mr-2 text-lg text-gris-400"></i>
-              {{$usuario['distrito']}}
+              {{$datos['distrito']}}
             </div>
             <div class="mb-2 text-gris-600 ">
-            <i class="fas fa-phone-alt mr-2 text-lg text-gris-400"></i>{{$usuario['numero']}}
+            <i class="fas fa-phone-alt mr-2 text-lg text-gris-400"></i><b>Numero telefonico:&nbsp;</b>{{$datos['numero_telefonico']}}
             </div>
             <div class="mb-8 text-gris-600">
-            <i class="far fa-envelope mr-2 text-lg text-gris-400"></i>{{$usuario['correo']}}
+            <i class="far fa-envelope mr-2 text-lg text-gris-400"></i><b>Correo:&nbsp;</b>{{$datos['correo']}}
             </div>
           </div>
 
         </div>
       </div>
     </div>
-    <!-- <footer class="relative bg-gris-200 pt-8 pb-6 mt-8">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-wrap items-center md:justify-between justify-center">
-      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
-        <div class="text-sm text-gris-500 font-semibold py-1">
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->
   </section>
 </main>

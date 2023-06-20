@@ -9,6 +9,8 @@ use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\SobreNosotrosController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\IniciarSesionController;
+use App\Http\Controllers\AdoptarController;
+use App\Http\Controllers\ActualizarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,15 +27,16 @@ Route::get('/', function () {
 });
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/buscar', [BuscarController::class, 'index']);
-// Route::get('/buscar/{}{id}', [BuscarController::class, 'mostrarAlbergue']);
-// Route::get('/buscar/perritos/{id}', [BuscarController::class, 'mostrarPerrito']);
 Route::get('/contactanos', [ContactanosController::class, 'index']);
 Route::get('/donar', [DonarController::class, 'index']);
 Route::get('/registrar', [RegistrarController::class, 'index']);
+Route::post('/registrar', [RegistrarController::class, 'store']);
+Route::get('/actualizar', [ActualizarController::class, 'index']);
+Route::post('/actualizar', [ActualizarController::class, 'actualizar']);
+Route::post('/registrar/search', [RegistrarController::class, 'showUsuarios']); 
 Route::get('/iniciar-sesion', [IniciarSesionController::class, 'index']);
-
-
-
-
-
+Route::post('/iniciar-sesion', [IniciarSesionController::class, 'login']);
+Route::post('/cerrar-sesion', [IniciarSesionController::class, 'logout']);
 Route::get('/sobre-nosotros', [SobreNosotrosController::class, 'index']);
+Route::get('/adoptar', [AdoptarController::class, 'index']);
+Route::post('/adoptar', [AdoptarController::class, 'actualizar_perro']);

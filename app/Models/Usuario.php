@@ -13,6 +13,7 @@ class Usuario extends Authenticatable
     use HasApiTokens, HasFactory;
 
     protected $primaryKey = 'id';
+    protected $guard = 'usuario';
 
     /**
      * The attributes that are mass assignable.
@@ -47,4 +48,9 @@ class Usuario extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAuthPassword()
+    {
+    return $this->contraseña;
+    }
 }

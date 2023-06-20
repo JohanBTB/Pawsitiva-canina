@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Models\Usuario;
+use App\Http\Models\Albergue;
 return [
 
     /*
@@ -38,8 +39,21 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
+            'provider' => 'usuarios',
+        ],
+        'api' => [
+            'driver' => 'token',
             'provider' => 'users',
         ],
+        'usuario' => [
+            'driver' => 'session',
+            'provider' => 'usuarios',
+        ],
+        'albergue' => [
+            'driver' => 'session',
+            'provider' => 'albergues',
+        ],
+
     ],
 
     /*
@@ -60,15 +74,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'usuarios' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Usuario::class,
+            'table' => 'usuarios'
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'albergues' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Albergue::class,
+            'table' => 'albergues'
+        ],
     ],
 
     /*

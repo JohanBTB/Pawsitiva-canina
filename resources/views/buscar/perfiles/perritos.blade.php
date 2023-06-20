@@ -1,72 +1,3 @@
-<?php
-$perritos = [
-    [
-        'id' => 1,
-        'nombre' => 'Max',
-        'edad' => 2,
-        'distrito' => 'Miraflores',
-        'raza' => 'Labrador Retriever',
-        'historial_clinico' => 'Vacunas al día, sin enfermedades previas.',
-        'adoptado_por' => null,
-        'albergue_id' => 1,
-        'foto' => 'perritos/1.jpg',
-    ],
-    [
-        'id' => 2,
-        'nombre' => 'Luna',
-        'edad' => 1,
-        'distrito' => 'San Isidro',
-        'raza' => 'Golden Retriever',
-        'historial_clinico' => 'Recién vacunada, sin enfermedades previas.',
-        'adoptado_por' => null,
-        'albergue_id' => 2,
-        'foto' => 'perritos/2.jpg',
-    ],
-    [
-        'id' => 3,
-        'nombre' => 'Rocky',
-        'edad' => 3,
-        'distrito' => 'Barranco',
-        'raza' => 'Bulldog Francés',
-        'historial_clinico' => 'Tiene alergias leves, pero se encuentra en tratamiento.',
-        'adoptado_por' => null,
-        'albergue_id' => 3,
-        'foto' => 'perritos/3.jpg',
-    ],
-    [
-        'id' => 4,
-        'nombre' => 'Toby',
-        'edad' => 2,
-        'distrito' => 'San Miguel',
-        'raza' => 'Chihuahua',
-        'historial_clinico' => 'Desparasitado, vacunas al día.',
-        'adoptado_por' => 4,
-        'albergue_id' => 2,
-        'foto' => 'perritos/4.jpg',
-    ],
-    [
-        'id' => 5,
-        'nombre' => 'Coco',
-        'edad' => 4,
-        'distrito' => 'La Molina',
-        'raza' => 'Schnauzer',
-        'historial_clinico' => 'Operado de una fractura en la pata trasera, recuperado.',
-        'adoptado_por' => 1,
-        'albergue_id' => 1,
-        'foto' => 'perritos/5.jpg',
-    ],
-];
-
-$perrito= collect($perritos)->firstWhere('id', $id);
-
-
-
-?>
-
-
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-
 <main class="profile-page px-6 mt-96  md:mt-40 xl:mt-12 lg:px-8">
   <section class="relative block h-500-px">
     <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
@@ -87,7 +18,7 @@ $perrito= collect($perritos)->firstWhere('id', $id);
           <div class="flex flex-wrap justify-center">
             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
               <div class="relative">
-                <img alt="{{$perrito['nombre']}}" src="images/buscar/{{$perrito['foto']}}" class="shadow-xl rounded-full align-middle border-none -mt-[50%] w-48 h-48 mb-3 rounded-full shadow-lg">
+                <img alt="{{$datos['nombre']}}" src="{{$datos['foto']}}" class="shadow-xl rounded-full align-middle border-none -mt-[50%] w-48 h-48 mb-3 rounded-full shadow-lg">
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
@@ -100,27 +31,30 @@ $perrito= collect($perritos)->firstWhere('id', $id);
             <div class="w-full lg:w-4/12 px-4 lg:order-1">
               <div class="flex justify-center py-4 lg:pt-4 pt-8">
                 <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">Edad</span><span class="text-lg text-gris-700">{{$perrito['edad']}}</span>
+                  <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">Edad</span><span class="text-lg text-gris-700">{{$datos['edad']." años"?? "Desconocida"}}</span>
                 </div>
                 <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">Raza</span><span class="text-lg text-gris-700">{{$perrito['raza']}}</span>
+                  <span class="text-xl font-bold block uppercase tracking-wide text-marron-600">Raza</span><span class="text-lg text-gris-700">{{$datos['raza']?? "Desconocida"}}</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="text-center mt-12">
             <h3 class="text-4xl font-semibold leading-normal mb-2 text-marron-700 mb-2">
-              {{ $perrito['nombre'] }}
+              {{ $datos['nombre'] }}
             </h3>
             <div class="text-sm leading-normal mt-0 mb-2 text-gris-400 font-bold uppercase">
               <i class="fas fa-map-marker-alt mr-2 text-lg text-gris-400"></i>
-              {{$perrito['distrito']}}
+              {{$datos['distrito']}}
             </div>
             <div class="mb-2 text-gris-600 ">
-            <i class="fas fa-phone-alt mr-2 text-lg text-gris-400"></i>{{$perrito['historial_clinico']}}
+            <i class="fas fa-hospital mr-2 text-lg text-gris-400"></i><b>Historial clinico:&nbsp;</b>{{$datos['historial_clinico']??"No disponible" }}
             </div>
+            <a href="/buscar?q=albergues-{{$datos['albergue_id']}}"><div class="mb-2 text-gris-600 ">
+            <i class="fas fa-home mr-2 text-lg text-gris-400"></i><b>Albergue:&nbsp;</b>{{$datos['albergue']}}
+            </div></a>
             <div class="mb-8 text-gris-600">
-            <i class="fas fa-dog mr-2 text-lg text-gris-400"></i></i>¿Adoptado? {{$perrito['adoptado_por']==null? "Aún no" : "Sí" }}
+            <i class="fas fa-dog mr-2 text-lg text-gris-400"></i></i><b>¿Adoptado?&nbsp;</b> {{$datos['adoptado_por']==null? "Aún no" : "Sí" }}
             </div>
           </div>
 

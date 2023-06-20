@@ -1,50 +1,3 @@
-
-<?php
-//         $albergues = array(
-//             array(
-//                 "id" => 1,
-//                 "nombre" => "Albergue Amor y Rescate",
-//                 "direccion"=> "Calle de las Pizzas - Av. Larco, Miraflores, Lima",
-//                 "numero"=>"456215875",
-//                 "codigo_qr" => "albergues/qr-facebook2.png",
-//                 "foto" => "albergues/1.jpg",
-//                 "correo" => "amoryrescate@hotmail.com",
-//                 "contrasena" => "contrasena1"
-//             ),
-//             array(
-//                 "id" => 2,
-//                 "nombre" => "Albergue Talpatitas",
-//                 "direccion"=> "Jirón de la Unión, Cercado de Lima, Lima",
-//                 "numero"=>"977456895",
-//                 "codigo_qr" => "albergues/qr-facebook2.png",
-//                 "foto" => "albergues/2.jpg",
-//                 "correo" => "talpatitas@hotmail.com",
-//                 "contrasena" => "contrasena2"
-//             ),
-//             array(
-//                 "id" => 3,
-//                 "nombre" => "Albergue Huellitas a casa",
-//                 "direccion"=> "Avenida La Mar, San Miguel, Lima",
-//                 "numero"=>"876105982",
-//                 "codigo_qr" => "albergues/qr-facebook2.png",
-//                 "foto" => "albergues/3.jpg",
-//                 "correo" => "HuellitasACasa@outlook.com",
-//                 "contrasena" => "contrasena3"
-//             )
-//         );
-        
-
-
-// $albergue = collect($albergues)->firstWhere('id', $id);
-
-
-
-?>
-
-component
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-
 <main class="profile-page px-6 mt-96  md:mt-40 xl:mt-12 lg:px-8">
   <section class="relative block h-500-px">
     <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
@@ -65,9 +18,9 @@ component
           <div class="flex flex-wrap justify-center">
             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
               <div class="relative">
-                <img alt="{{$datos['nombre']}}" src="images/buscar/{{$datos['foto']}}" class="shadow-xl rounded-full align-middle border-none -mt-[50%] w-48 h-48 mb-3 rounded-full shadow-lg">
+                <img alt="{{$datos['nombre']}}" src="{{$datos['foto']}}" class="shadow-xl rounded-full align-middle border-none -mt-[50%] w-48 h-48 mb-3 rounded-full shadow-lg">
 
-                <img alt="{{$datos['nombre']}}" src="images/donar/qr-facebook2.png" class="shadow-xl align-middle border-none  w-48 h-48 mb-3 shadow-lg">
+                <img alt="{{$datos['nombre']}}" src="{{$datos['codigo_qr']}}" class="shadow-xl align-middle border-none  w-48 h-48 mb-3 shadow-lg">
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
@@ -90,10 +43,10 @@ component
               {{$datos['direccion']}}
             </div>
             <div class="mb-2 text-gris-600 ">
-            <i class="fas fa-phone-alt mr-2 text-lg text-gris-400"></i>{{$datos['numero']}}
+            <i class="fas fa-phone-alt mr-2 text-lg text-gris-400"></i><b>Numero telefonico:&nbsp;</b>{{$datos['numero_telefonico']}}
             </div>
             <div class="mb-8 text-gris-600">
-            <i class="far fa-envelope mr-2 text-lg text-gris-400"></i>{{$datos['correo']}}
+            <i class="far fa-envelope mr-2 text-lg text-gris-400"></i><b>Correo:&nbsp;</b>{{$datos['correo']}}
             </div>
           </div>
 

@@ -11,7 +11,6 @@ class Perro extends Model
     protected $fillable = [
         'nombre',
         'edad',
-        'correo',
         'distrito',
         'numero_telefonico',
         'raza',
